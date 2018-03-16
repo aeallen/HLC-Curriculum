@@ -1,6 +1,6 @@
 ---
 title: 'R Small Group: Class 3'
-author: "Amy Allen & Sara Snell"
+author: "Amy Pomeroy, Dayne Filer, & Sara Taylor"
 date: "June 21, 2017"
 output:
   pdf_document:
@@ -53,10 +53,10 @@ knitr::opts_chunk$set(echo = TRUE, collapse = TRUE)
 
 A csv is a comma separated values file, which allows data to be saved in a table structured format. Excel files can often be saved as csv files. R has a function to read these files called `read.csv`. We will use this function to read in data from a csv file.
 
-You have been provided with the data set "yeastmutants.csv". This data set includes data on the response to mating pheromone over time for following three cell types: wildtype (wt), an sst2 mutant (sst2), and a gpa1 mutant (gpa1). For each mutant there is data on the mean response of a population (avg) as well as the standard deviation of the response (stdev). The data set also includes the time for each data point. Let's import it into R and store it as `data`. First we need to set our working directory to the location where the file is stored. We do this by using the `setwd` function. First locate the file under the files tab, then hover over the file name and it should give you the path to that directory; for me it is "~/Documents/rclass". Make sure that the path name is in quotes so R knows it is a character data type and execute the function as follows:
+You have been provided with the data set "yeastmutants.csv". This data set includes data on the response of budding yeast to mating pheromone over time for following three cell types: wildtype (wt), an sst2 mutant (sst2), and a gpa1 mutant (gpa1). For each mutant there is data on the mean response of a population (avg) as well as the standard deviation of the response (stdev). The data set also includes the time for each data point. Let's import it into R and store it as `data`. First we need to set our working directory to the location where the file is stored. We do this by using the `setwd` function. First locate the file under the files tab, then hover over the file name and it should give you the path to that directory; for me it is "~/Documents/HLC Curriculum/HLC-Curriculum/R Materials". Make sure that the path name is in quotes so R knows it is a character data type and execute the function as follows:
 
 ```{r}
-setwd("~/Documents/rclass")
+setwd("~/Documents/HLC Curriculum/HLC-Curriculum/R Materials")
 getwd()
 ```
 
@@ -87,7 +87,7 @@ plot(x = data$Time, y = data$wt.avg)
 ```
 
 \pagebreak
-We also want to give the plot a title and axis labels.
+We also want to give the plot an appropriate title and axis labels.
 
 ```{r}
 plot(x = data$Time, 
@@ -133,7 +133,7 @@ The following questions are to be worked on in a small group. Always make sure t
 
 2. Plot the standard deviation of the pheromone response for all three cell types. Plot them as points making each cell type a different color. Create a legend to match.
 
-3. Noise in cells is often quantified by the coefficient of variation (CV) because it normalizes the standard deviation for differences in the mean. CV is defined as $CV=\sigma/\mu$ where $\sigma$ is the standard deviation and $\mu$ is mean. Create new variables in the data frame for the CV for each cell type. (Rememeber: you can use subsetting to assign new variables). Then create a plot of the CV for all cell types following the same guidelines as in questions 1 and 2.
+3. Noise in cellular response is often quantified by the coefficient of variation (CV) because it normalizes the standard deviation for differences in the mean. CV is defined as $CV=\sigma/\mu$ where $\sigma$ is the standard deviation and $\mu$ is mean. Create new variables in the data frame for the CV for each cell type. (Rememeber: you can use subsetting to assign new variables). Then create a plot of the CV for all cell types following the same guidelines as in questions 1 and 2.
 
 \pagebreak
 
